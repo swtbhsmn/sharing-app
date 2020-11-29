@@ -1,38 +1,159 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.app-header{
+  width:100%;
+  height: 60px;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-body{
+width: 100%;
+height: calc(100vh - 120px);
+}
+.footer{
+  height: 60px;
+}
+.sub-footer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background: rgb(241, 238, 238);
+}
+.main{
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.app-container{
+  width: 200px;
+  height: 200px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background: url('./mess_2.jpg');
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
 
-.App-link {
-  color: #61dafb;
+.text-color{
+  color: rgb(8, 129, 62);
 }
+.sub-header{
+  width: 100%;
+  display: flex;
+  height: 60px;
+}
+.divider{
+  flex: 1 1 auto;
+}
+.text-padding{
+  padding: 25px 15px 15px 15px;
+}
+.brand-name{
+  padding: 15px;
+  font-size: 4vh;
+  text-decoration: none;
+}
+.brand-name:hover{
+  color:rgb(8, 129, 62) ;
+}
+#discription{
+  display: none;
+ 
+}
+.show-pointer{
+  cursor: pointer;
+}
+.tringle-tip{
+  margin-top:5px;
+  margin-left: 80px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid rgb(8, 129, 62);
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+}
+.description-box{
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 250px;
+  max-height: 200px;
+  border: 2px solid  rgb(8, 129, 62);
+  z-index: 2;
+  right: 0;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+.btn-css{
+  width: 150px;
+
+}
+.btn-secondary{
+color: rgb(8, 129, 62) !important;
+border-color: #fff !important;
+background-color: rgb(241, 243, 242) !important;
+}
+.btn-secondary:hover{
+  color: #fff !important;
+  border-color: rgb(8, 129, 62) !important;
+  background-color: rgb(8, 129, 62) !important;
   }
-  to {
-    transform: rotate(360deg);
+.line-height{
+  line-height: 30px;
+}
+.login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px);
+  flex-direction: column;
+
+}
+.login-box{
+  width:300px;
+  
+}
+
+.lock-icon{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgb(8, 129, 62);
+  margin-bottom: 20px;
+
+}
+.form-control:focus{
+  border-color:rgb(8, 129, 62) !important;
+  box-shadow: 0 0 0 0.2rem rgb(8, 129, 62);
+}
+
+.signup{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+}
+.signup-box{
+  max-width:420px;
+}
+@media(max-width:600px){
+  .signup-box{
+    max-width:320px;
   }
 }
