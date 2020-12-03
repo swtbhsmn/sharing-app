@@ -47,15 +47,8 @@ class Signup extends React.Component {
 
         
         const { firstname, lastname, username, password, photo } = this.state;
-        if(firstname.length === 0){
-            alert(`Firstname field required!`);
-            return;
-        }
-        if(lastname.length === 0){
-            alert(`Lastname field required!`);
-            return;
-        }
-        if(username.lenght === 0 ){
+       
+        if(!username ){
             alert(`Username field required!`);
             return;
         }
@@ -89,6 +82,9 @@ class Signup extends React.Component {
             <>
                 <div className="signup">
                 <div className="lock-icon">
+                <div style={{ display: this.state.imgbox }}>
+                                <img width="100px" height="100px" src={this.state.image} alt="profile photo" />
+                            </div>
                                 <i style={{ color: "#fff" }} className="material-icons">lock</i>
                             </div>
                     <div className="signup-box">
@@ -125,15 +121,14 @@ class Signup extends React.Component {
                           </div>
                                 </div>
                          </FormGroup>
-                            <FormGroup style={{ display: this.state.imgbox }}>
-                                <img width="100px" height="100px" src={this.state.image} alt="profile photo" />
-                            </FormGroup>
+                       
 
                             <FormGroup>
                          
                                 <Label for="examplePhoto">Profile Photo</Label>
+                            
                                 <Input type="file" name="photo" onChange={this.onImageChange} id="examplePhoto" />
-
+                            
                             </FormGroup>
 
                             <div style={{ width: "100%", justifyContent: "center", display: "flex" }}>
