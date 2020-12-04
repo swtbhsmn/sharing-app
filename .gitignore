@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-
+/share_posts_backend
 # testing
 /coverage
 

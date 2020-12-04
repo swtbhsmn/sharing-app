@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import MainApp from './components/main_app';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';

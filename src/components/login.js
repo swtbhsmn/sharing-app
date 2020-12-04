@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Form, FormGroup, Input, } from 'reactstrap';
-
-
+import Loading from './loader';
+import ErrorModal from './error_modal';
 class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -21,10 +21,9 @@ class Login extends React.Component {
     onSubmitHandler = (e) => {
 
         e.preventDefault();
-        alert(this.state.username + this.state.password);
-        //this.props.props.loginUser(this.state.username, this.state.password);
-
-
+        //alert(this.state.username + this.state.password);
+        this.props.props.loginUser(this.state.username, this.state.password,this.props.props.history);
+      
 
     }
     onValueChange = (e) => {
@@ -35,7 +34,8 @@ class Login extends React.Component {
 
         return (
             <>
-
+                <Loading isLoading={this.props.props.login_user.isLoading}/>
+                <ErrorModal errMessage={this.props.props.login_user.errMess!= null?true:false} info={this.props.props.login_user.errMess}/>
                 <div className="login">
                     <div className="lock-icon">
                         <i style={{ color: "#fff" }} className="material-icons">lock</i>
@@ -48,7 +48,7 @@ class Login extends React.Component {
 
                             <FormGroup>
 
-                                <Input autoComplete="off" spellCheck="false" type="email" name="username" value={this.state.username} onChange={this.onValueChange} id="exampleEmail" placeholder="Enter Email" />
+                                <Input autoComplete="off" spellCheck="false" type="text" name="username" value={this.state.username} onChange={this.onValueChange} id="exampleEmail" placeholder="Enter Username" />
                             </FormGroup>
                             <FormGroup>
 

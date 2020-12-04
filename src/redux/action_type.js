@@ -1,0 +1,16 @@
+export const DO_LOADING_LOGIN ='DO_LOADING_LOGIN';
+export const LOGIN_USER ='LOGIN_USER';
+export const LOGIN_USER_FAILED = 'LOGIN_USER_FAILED';
+
+export const FETCH_POST = 'FETCH_POST';
+export const POST_ADDED = 'POST_ADDED';
+export const POST_ADDED_FAILED= 'POST_ADDED_FAILED';
+
+
+export const POST_ADDED_SUCCESSFULLY = ' POST_ADDED_SUCCESSFULLY';
+export const POST_ADD_FAILED = 'POST_ADD_FAILED';
+export const DO_POST= 'DOING_POST';
+
+export const REGISTERED ="REGISTERED";
+export const REGISTER_FAILED = 'REGISTER_FAILED';
+export const DO_REGISTER = 'DO_REGISTER';

@@ -46,7 +46,7 @@ class Signup extends React.Component {
         e.preventDefault();
 
         
-        const { firstname, lastname, username, password, photo } = this.state;
+        const { username, password, photo } = this.state;
        
         if(!username ){
             alert(`Username field required!`);
@@ -65,8 +65,6 @@ class Signup extends React.Component {
             return;
         }
         let formData = new FormData();
-        formData.append("firstname", firstname);
-        formData.append("lastname", lastname);
         formData.append("username", username);
         formData.append("password", password);
         formData.append("photo", photo, this.state.photo.name);
@@ -78,6 +76,18 @@ class Signup extends React.Component {
 
     render() {
        
+        const RenderFormStatus = ()=>{
+            if(this.props.props.signup_user.registered.length!==0){
+                return(
+                    <>
+                    <p className="text-color text-center">{this.props.props.signup_user.registered.status}</p>
+                    </>
+                )
+            }
+            else{
+                return(<div style={{display:"none"}}></div>)
+            }
+        }
         return (
             <>
                 <div className="signup">
@@ -136,6 +146,7 @@ class Signup extends React.Component {
 
                             </div>
                         </Form>
+                        <RenderFormStatus/>
                         </div>
                     </div>
                 </div>

@@ -6,27 +6,32 @@ import Signup from './signup';
 import Login from './login';
 import Header from "./header";
 import Footer from './footer';
+import { loginUser,fetchPosts,createPost,signupUser} from '../redux/action_creaters';
+
 const mapStateToProps = state => {
 
     return {
-      state:state
-
+      login_user: state.login_user,
+      fetch_posts:state.fetch_posts,
+      create_posts:state.create_posts,
+      signup_user:state.signup_user
     };
 
 }
 
 const mapDispatchToProps = dispatch => ({
 
-   
-
+loginUser:(username,password,history)=>dispatch(loginUser(username,password,history)),
+fetchPosts:()=>dispatch(fetchPosts()),
+createPost:(title,text)=>dispatch(createPost(title,text)),
+signupUser:(formData)=>dispatch(signupUser(formData))
 })
 
 
 class MainApp extends React.Component {
 
     componentDidMount=()=>{
-     
-
+        this.props.fetchPosts();
         console.log(this.props);
         
     }
